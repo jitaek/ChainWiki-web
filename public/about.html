@@ -1,0 +1,138 @@
+<!doctype html>
+<!--
+  About Page
+-->
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>앱 정보</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css?v=0">
+
+<!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/jquery.lazyload.js?v=1"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/logo.png">
+
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="/">아르카나</a>
+    <a href="/filter">필터</a>
+    <a href="/ability">어빌리티</a>
+    <a href="/about">앱 정보</a>
+  </div>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="section hero">
+    <div class="container" style="padding-top:10px">
+      <div class="row">
+        <div class="one-half column aboutLogo" style='text-align:center'>
+
+          <div class="placeholderLogo"><img src='/images/logo.png' width='250px'></div>
+          <h4 class="hero-heading">체인크로니클 위키입니다.</h4>
+          <a href="https://itunes.apple.com/kr/app/체인크로니클-위키/id1165642488" target="_blank"><img src='/images/appStoreButton.svg'  style='vertical-align:middle'></a>
+          <a href="https://github.com/jitaek/ChainChronicleKoreaWiki"target="_blank"><div class='button'>Github 보기</div></a>
+          <h6>By 제이k.</h6>
+
+          <div><a href="/patch">패치 기록</a></div>
+          <div><a href="/instructions">아르카나 수정 안내</a></div>
+          <div style='margin-top:10px'><a href='/privacy'>개인정보 처리방침</a></div>
+
+        </div>
+
+        <div class="one-half column phones">
+          <img class='phone' data-original='https://firebasestorage.googleapis.com/v0/b/chainchronicle-ea233.appspot.com/o/screenshots%2Fyuriana.jpg?alt=media&token=9f2cc05c-25e9-42b0-8e44-40b33a995536'>
+          <img class='phone' data-original='https://firebasestorage.googleapis.com/v0/b/chainchronicle-ea233.appspot.com/o/screenshots%2Fpiriana.jpg?alt=media&token=4808c880-202b-42e2-b64b-021610a81853'>
+          <script type="text/javascript">
+            $('.phone').lazyload({
+            placeholder: '/images/placeholder.png',
+            effect : 'fadeIn'
+          });
+          </script>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+  </div>
+<!--
+  <div class='section values'>
+      <div class='landingRow'>
+        <span class='landingTitle'>기능</span>
+      </div>
+  </div>
+
+  <table class='container'>
+
+    <thead>
+      <tr>
+        <th></th>
+        <th>iOS</th>
+        <th>웹</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td class ='featureCell'>이름 검색</td>
+        <td class = 'platformCell'><span id="checkmark"></span></td>
+        <td class = 'platformCell'>no</td>
+      </tr>
+    </tbody>
+
+  </table>-->
+
+<!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBD9eX7ABB0Xu1N6CnSdKL-bnsNF5WgLtc",
+    authDomain: "chainchronicle-ea233.firebaseapp.com",
+    databaseURL: "https://chainchronicle-ea233.firebaseio.com",
+    projectId: "chainchronicle-ea233",
+    storageBucket: "chainchronicle-ea233.appspot.com",
+    messagingSenderId: "1008757887866"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73091430-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

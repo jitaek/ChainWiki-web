@@ -1,0 +1,57 @@
+<!DOCTYPE html>  
+ <html lang="en">  
+  <head>  
+   <title>로그인</title>  
+   <meta charset="UTF-8">  
+   <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css?v=24">
+ </head>  
+ <!-- Initialize Firebase -->  
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+        apiKey: "AIzaSyBD9eX7ABB0Xu1N6CnSdKL-bnsNF5WgLtc",
+        authDomain: "chainchronicle-ea233.firebaseapp.com",
+        databaseURL: "https://chainchronicle-ea233.firebaseio.com",
+        projectId: "chainchronicle-ea233",
+        storageBucket: "chainchronicle-ea233.appspot.com",
+        messagingSenderId: "1008757887866"
+        };
+        firebase.initializeApp(config);
+    </script> 
+ <!-- The code below initializes the sign-in widget from FirebaseUI web. -->  
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.0.0/firebaseui.css" />
+    <script type="text/javascript">  
+    var uiConfig = {  
+        // TODO: remember the arcana the user wanted to edit.
+        signInSuccessUrl: 'loggedIn.html',  
+        signInOptions: [  
+        // Specify providers you want to offer your users.  
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        ],  
+        // Terms of service url can be specified and will show up in the widget.  
+        tosUrl: 'about.html'  
+    };  
+    // Initialize the FirebaseUI Widget using Firebase.  
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());  
+    // The start method will wait until the DOM is loaded.  
+    ui.start('#firebaseui-auth-container', uiConfig);  
+    </script>  
+
+  <body>  
+    <div class='container u-full-width' id='container' style='margin-top:10px'>
+        <div class="placeholderLogo"><img src='/images/logo.png' width='250px'></div>
+        <h4 align='center'>체인크로니클 위키입니다.</h4>  
+    </div>
+    <div id="firebaseui-auth-container"></div>  
+  </body>  
+
+ </html>  

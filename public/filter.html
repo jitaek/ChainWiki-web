@@ -1,0 +1,166 @@
+<!doctype html>
+<!--
+  Arcana Home Screen. Queries 10 arcana at a time as user scrolls down. Starts from the most recent posting.
+-->
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>체인크로니클 위키</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css?v=25">
+
+
+<!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/jquery.lazyload.js"></script>
+  <script src="/js/underscore-min.js"></script>
+  <script src="/js/filter.js?v=5"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/logo.png">
+
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="/">아르카나</a>
+    <a href="/filter">필터</a>
+    <a href="/ability">어빌리티</a>
+    <a href="/about">앱 정보</a>
+  </div>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div>
+
+    <div class='loadingBox'>
+      <div class='loader'></div>
+      <div>아르카나 검색 중...</div>
+    </div>
+
+    <div class='filterButtonRow'>
+      <button class='filterButton' onclick='toggleFilter(this)'>필터</button>
+    </div>
+
+    <table class="arcanaTable u-full-width">
+      <tbody id="arcana">
+      </tbody>
+    </table>
+
+    <div class="filterView" id='filter'>
+      <table class='u-full-width' id ='filterTable'>
+        <tbody>
+          <tr>
+            <td class='filterCell rarity' id='5' onclick='updateFilter(this)'>5</td>
+            <td class='filterCell rarity' id='4' onclick='updateFilter(this)'>4</td>
+            <td class='filterCell rarity' id='3' onclick='updateFilter(this)'>3</td>
+            <td class='filterCell rarity' id='2' onclick='updateFilter(this)'>2</td>
+            <td class='filterCell rarity' id='1' onclick='updateFilter(this)'>1</td>
+          </tr>
+          <tr class='spacer'></tr>
+          <tr class='newFilter'>
+            <td class='filterCell arcanaClass' id='전사' onclick='updateFilter(this)'>전사</td>
+            <td class='filterCell arcanaClass' id='기사' onclick='updateFilter(this)'>기사</td>
+            <td class='filterCell arcanaClass' id='궁수' onclick='updateFilter(this)'>궁수</td>
+            <td class='filterCell arcanaClass' id='법사' onclick='updateFilter(this)'>법사</td>
+            <td class='filterCell arcanaClass' id='승려' onclick='updateFilter(this)'>승려</td>
+          </tr>
+          <tr class='spacer'></tr>
+          <tr class='newFilter'>
+            <td class='filterCell weapon' id='검' onclick='updateFilter(this)'>검</td>
+            <td class='filterCell weapon' id='봉' onclick='updateFilter(this)'>봉</td>
+            <td class='filterCell weapon' id='창' onclick='updateFilter(this)'>창</td>
+            <td class='filterCell weapon' id='마' onclick='updateFilter(this)'>마</td>
+            <td class='filterCell weapon' id='궁' onclick='updateFilter(this)'>궁</td>
+          </tr>
+          <tr>
+            <td class='filterCell weapon' id='성' onclick='updateFilter(this)'>성</td>
+            <td class='filterCell weapon' id='권' onclick='updateFilter(this)'>권</td>
+            <td class='filterCell weapon' id='총' onclick='updateFilter(this)'>총</td>
+            <td class='filterCell weapon' id='저' onclick='updateFilter(this)'>저</td>
+          </tr>
+          <tr class='spacer'></tr>
+          <tr class='newFilter'>
+            <td class='filterCell affiliation' id='여행자' onclick='updateFilter(this)'>여행자</td>
+            <td class='filterCell affiliation' id='마신' onclick='updateFilter(this)'>마신</td>
+            <td class='filterCell affiliation' id='부도' onclick='updateFilter(this)'>부도</td>
+            <td class='filterCell affiliation' id='성도' onclick='updateFilter(this)'>성도</td>
+            <td class='filterCell affiliation' id='현자의탑' onclick='updateFilter(this)'>현탑</td>
+          </tr>
+          <tr>
+            <td class='filterCell affiliation' id='미궁산맥' onclick='updateFilter(this)'>미궁</td>
+            <td class='filterCell affiliation' id='호수도시' onclick='updateFilter(this)'>호도</td>
+            <td class='filterCell affiliation' id='정령섬' onclick='updateFilter(this)'>정령섬</td>
+            <td class='filterCell affiliation' id='화염구령' onclick='updateFilter(this)'>구령</td>
+            <td class='filterCell affiliation' id='대해' onclick='updateFilter(this)'>대해</td>
+          </tr>
+          <tr>
+            <td class='filterCell affiliation' id='수인의대륙' onclick='updateFilter(this)'>수인</td>
+            <td class='filterCell affiliation' id='죄의대륙' onclick='updateFilter(this)'>죄</td>
+            <td class='filterCell affiliation' id='박명의대륙' onclick='updateFilter(this)'>박명</td>
+            <td class='filterCell affiliation' id='철연의대륙' onclick='updateFilter(this)'>철연</td>
+            <td class='filterCell affiliation' id='연대기대륙' onclick='updateFilter(this)'>연대기</td>
+          </tr>
+          <tr>
+            <td class='filterCell affiliation' id='레무레스섬' onclick='updateFilter(this)'>레무</td>
+            <td class='filterCell affiliation' id='의용군' onclick='updateFilter(this)'>의용군</td>
+            <td class='filterCell affiliation' id='화격단' onclick='updateFilter(this)'>화격단</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class='clearFiltersCell u-full-width' onclick='clearFilters()'>필터 지우기</div>
+
+    </div>
+    
+
+  </div>
+
+<!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBD9eX7ABB0Xu1N6CnSdKL-bnsNF5WgLtc",
+    authDomain: "chainchronicle-ea233.firebaseapp.com",
+    databaseURL: "https://chainchronicle-ea233.firebaseio.com",
+    projectId: "chainchronicle-ea233",
+    storageBucket: "chainchronicle-ea233.appspot.com",
+    messagingSenderId: "1008757887866"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73091430-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

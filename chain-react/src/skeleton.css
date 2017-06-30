@@ -1,0 +1,1193 @@
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Grid
+- Base Styles
+- Typography
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
+*/
+/* Shared
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button {
+  border-radius: 100px;
+}
+
+/* Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.section {
+  padding: 1rem 0 7rem;
+  text-align: center;
+}
+.section-heading,
+.section-description {
+  margin-bottom: 1.2rem;
+}
+
+/* Hero
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.phones {
+  position: relative;
+}
+.phone {
+  position: relative;
+  max-width: 80%;
+  margin: 3rem auto -12rem;
+}
+.phone + .phone {
+  display: none;
+}
+
+/* Values
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.values {
+  background-size: cover;
+  color: #fff;
+  padding-bottom: 5rem;
+}
+.value-multiplier {
+  margin-bottom: .5rem;
+  color: #11DFC7;
+}
+.value-heading {
+  margin-bottom: .3rem;
+}
+.value-description {
+  opacity: .8;
+  font-weight: 300;
+}
+
+/* Help
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.get-help {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Categories
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.categories {
+  background-size: cover;
+  color: #fff;
+}
+.categories .section-description { 
+  margin-bottom: 4rem;
+}
+
+/* Bigger than 550 */
+@media (min-width: 550px) {
+  .section {
+    padding: 12rem 0 11rem;
+  }
+  .hero {
+    padding-bottom: 12rem;
+    text-align: left;
+    height: 165px;
+  }
+  .phone {
+    position: absolute;
+    top: -7rem;
+    right: 3rem;
+    max-height: 362px;
+    z-index: 3;
+  }
+  .phone + .phone {
+    top: -6rem;
+    display: block;
+    max-width: 73.8%;
+    right: 0;
+    z-index: 2;
+    max-height: 338px;
+  }
+  .hero-heading {
+    font-size: 2.4rem;
+  }
+}
+
+/* Bigger than 750 */
+@media (min-width: 750px) {
+  .hero {
+    height: 190px;
+  }
+  .hero-heading {
+    font-size: 2.6rem;
+  }
+  .section {
+    padding: 14rem 0 15rem;
+  }
+  .hero {
+    padding: 16rem 0 14rem;
+  }
+  .section-description {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .phone {
+    top: -14rem;
+    right: 5rem;
+    max-height: 510px;
+  }
+  .phone + .phone {
+    top: -12rem;
+    max-height: 472px;
+  }
+  .categories {
+    padding: 15rem 0 8rem;
+  }
+}
+
+/* Bigger than 1000 */
+@media (min-width: 1000px) {
+  .section {
+    padding: 20rem 0 19rem;
+  }
+  .hero {
+    padding: 22rem 0;
+  }
+  .hero-heading {
+    font-size: 3.0rem;
+  }
+  .phone {
+    top: -16rem;
+    max-height: 615px;
+  }
+  .phone + .phone {
+    top: -14rem;
+    max-height: 570px;
+  }
+}
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /*padding: 0px;*/
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  .container 
+  { width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  /*font-family: "돋움", dotum, "굴림", gulim, arial, helvetica, sans-serif;*/
+  font-family: 'Apple SD Gothic Neo', 'Helvetica Neue', 'Helvetica','NanumBarunGothic', 'Malgun Gothic', dotum, 'Lucida Grande', sans-serif;
+  color: #222; }
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300; }
+h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 { font-size: 5.0rem; }
+  h2 { font-size: 4.2rem; }
+  h3 { font-size: 3.6rem; }
+  h4 { font-size: 3.0rem; }
+  h5 { font-size: 2.4rem; }
+  h6 { font-size: 1.5rem; }
+}
+
+p {
+  margin-top: 0; }
+
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+a:hover {
+  background-color: white;
+  color: #68a283; }
+
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 13px;
+  /*font-weight: 600;*/
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: white;
+  background-color: #68a283;
+  border-color: #68a283;
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #68a283;
+  border-color: #68a283; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #68a283;
+  background-color: #FFF;
+  border-color: #68a283; }
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #68a283;
+  outline: 0; }
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+fieldset {
+  padding: 0;
+  border-width: 0; }
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; }
+
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+  list-style: disc;
+  margin-left: 15px; }
+ol {
+  list-style: decimal inside; }
+ol, ul {
+  padding-left: 10px;
+  margin-top: 0; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+li {
+  margin-bottom: 1rem; }
+
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px; }
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; }
+
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th,
+td {
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child {
+  padding-left: 10px;
+  white-space: nowrap;
+}
+td:first-child {
+  padding: 10px 10px 10px 10px;
+   }
+th:last-child,
+td:last-child {
+  padding: 10px 10px 10px 10px;
+   }
+
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+button,
+.button {
+  margin-bottom: 1rem; }
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  padding: 0px;
+  }
+
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
+/* Custom
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.nameKRLabel {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0px 5px 0px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.nicknameKRLabel {
+  font-size: 1.2rem;
+  padding: 0px 10px 0px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.nameJPLabel, .nicknameJPLabel {
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  color: silver;
+}
+
+.nameJPLabel {
+  padding: 0px 5px 0px 0;
+}
+
+.nicknameJPLabel {
+  padding: 0px 10px 0px 5px;
+}
+
+.detailLabel {
+  font-size: 1.2rem;
+  padding-right: 10px;
+  color: #68a283;
+}
+
+.placeholderLogo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #F7F7F7;
+    margin: auto;
+}
+
+.placeholderMain {
+  width: 320px;
+  height: 480px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.placeholderIcon, .arcanaImageIcon {
+  padding: 0px;
+  display: block;
+  width: 66px;
+  height: 66px;
+}
+
+.placeholderIcon {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.placeholderLogo {
+  width: 250px;
+  height: 250px;
+  background-color: white;
+}
+
+.arcanaImageMain {
+  display: block;
+  width: 100%;
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+  .arcanaImageMain {
+    width: 320px;
+  }
+}
+
+.arcanaDetailTable {
+  /*border-bottom: 40px solid white;*/
+  border-top: 1px solid #E1E1E1;
+  margin: 0 0 40px 0;
+  width: 100%;
+}
+
+.arcanaSkillTable {
+  margin: 0;
+  width: 100%;
+}
+
+.headerCell {
+  height: 25px;
+  width: 50px;
+  text-align: center;
+  padding-right: 10px;
+}
+
+.bodyCell {
+  height: 25px;
+  text-align: left;
+  padding-left: 10px;
+  min-width: 200px;
+}
+
+.skillNameCell {
+  height: 20px;
+  text-align: left;
+  padding-right: 20px;
+  float: left;
+}
+
+.manaContainer {
+  float: right;
+}
+
+.manaLabelCell, .manaCell {
+  padding: 0 5px 0 10px;
+  float: left;
+}
+
+.manaLabelCell {
+  width: auto;
+  font-weight: 800;
+}
+
+.manaCell {
+  width: 10px;
+}
+
+@media (min-width: 550px) {
+  .manaContainer {
+    float: left
+  }
+  .manaCell, .manaLabelCel {
+    float: left;
+  }
+}
+
+.skillAbilityDescCell {
+  padding: 10px;
+  border-bottom: 1px solid #E1E1E1;
+  display: block;
+  overflow:auto;
+}
+
+/* Nav Bar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.topnav {
+    background-color: #68a283;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: white;
+    color: #68a283;
+}
+
+.topnav a.icon {
+    float: left;
+    display: block;
+}
+
+.headerLogo {
+  /*padding: 0px;*/
+  width: 20px;
+  height: 20px;
+}
+
+
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    border-color: #68a283 !important;
+    /*width: 98%;*/
+}
+
+.patchNote {
+  font-size: 1.5em;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 750px) {
+  .aboutLogo {
+    margin-top:-5em;
+  }
+}
+
+
+@media (min-width: 400px) {
+  .topnav a.icon {
+    display: none;
+  }
+  .topnav a:not(:first-child) {
+    display: block;
+  }
+}
+
+.checkmark {
+    display:inline-block;
+    width: 22px;
+    height:22px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+
+.landingRow {
+  background-color: #68a283;
+  width: 100%;
+  height: 300px;
+  line-height: 300px;
+  /*vertical-align: middle;*/
+  text-align: center;
+}
+
+.landingTitle {
+  font-size: 1.6em;
+}
+
+.featureCell {
+  width: 60%;
+}
+
+.platformCell {
+  width: 20%;
+}
+
+#checkmark {
+    display:inline-block;
+    width: 22px;
+    height:22px;
+    border-radius:50%;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+
+#checkmark:before{
+    content:"";
+    position: absolute;
+    width:3px;
+    height:9px;
+    background-color:#68a283;
+    left:11px;
+    top:6px;
+}
+
+#checkmark:after{
+    content:"";
+    position: absolute;
+    width:6px;
+    height:6px;
+    background-color:#68a283;
+    left:8px;
+    top:12px;
+}
+
+.cd-main-header, .cd-main-content {
+  position: relative;
+  transition: transform 0.3s;
+}
+.cd-main-header.nav-is-visible, .cd-main-content.nav-is-visible {
+  transform: translateX(-260px);
+}
+
+@media only screen and (min-width: 1024px) {
+  .cd-main-search {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  .cd-main-search.is-visible {
+    /* search form open */
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .animate-search .cd-main-search.is-visible {
+    /* trigger search form animation if <header> has the .animate-search class */
+    animation: cd-slide-in 0.3s;
+  }
+  .animate-search .is-visible .cd-search-suggestions {
+    /* trigger the dropdown animation if <header> has the .animate-search class */
+    transform-origin: center top;
+    animation: cd-3d-rotation 0.5s 0.3s;
+    animation-fill-mode: backwards;
+  }
+}
+@keyframes cd-slide-in {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+ 
+@keyframes cd-3d-rotation {
+  0% {
+    transform: perspective(1000px) rotateX(-90deg);
+  }
+  100% {
+    transform: perspective(1000px) translateY(0);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .cd-main-search .cd-select {
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+  }
+  .cd-main-search select {
+    /* the <select> element is not visible - it is covered by the .selected-value element */
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    color: transparent;
+  }
+  .cd-main-search .selected-value {
+    color: #ffffff;
+    pointer-events: none;
+  }
+  .cd-main-search select, .cd-main-search .selected-value {
+    padding: 0.5em 1.7em 0.5em .3em;
+    font-size: 1.4rem;
+    border-radius: 3px;
+  }
+}
+
+.abilityTypeButton {
+  width: 50%;
+}
+
+.abilityTypeButton, .arcanaClassButton {
+  float: left;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  margin: 0;
+  color: #555;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: .1rem;
+  white-space: nowrap;
+  border-radius: 3px;
+  border-style: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+  .abilityTypeButton {
+    width: 200px;
+  }
+}
+
+.abilityTypeButton:hover, .arcanaClassButton:hover {
+  background-color: #F7F7F7;
+  color: #68a283;
+  padding-bottom:1px;
+  border-bottom: 1px;
+  text-decoration: underline;
+}
+
+.abilityTypeButton:focus, .arcanaClassButton:focus {
+  color: #68a283;
+  background-color: #F7F7F7;
+}
+
+.button.selected {
+  color: #68a283;
+  background-color: #F7F7F7;
+}
+
+.arcanaClassButton {
+  width: 20%;
+  font-size: 14px;  
+  font-weight: 600;
+}
+
+.tab {
+  height: 40px;
+}
+
+.abilityListCell {
+  height: 40px;
+  padding-left: 10px;
+  margin: 0;
+  line-height: 40px;
+  vertical-align: middle;
+  border-bottom: 1px solid lightgray;
+}
+.abilityListCell:hover {
+  background-color: #F7F7F7;
+}
+
+.clear {
+    clear:both;
+}
+
+.arcanaCell {
+  height: 95px;
+}
+
+.arcanaCell:hover {
+  background-color: #F7F7F7;
+}
+
+.searchNameBox {
+  display: table-cell;
+  width: 50%;
+  clear: both;
+}
+
+.searchButton {
+  display: table-cell;
+  width: 40%;
+  clear: both;
+}
+
+.loadingBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+}
+
+.loader {
+  display: inline-block;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #68a283;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.filterButton {
+  background-color: white;
+  color: black;
+  margin-bottom: 0;
+}
+
+.filterButton:focus {
+  background-color: white;
+  color: black;
+}
+
+.filterButtonSelected {
+  background-color: white;
+  color: black;
+}
+
+.filterButtonRow {
+  background-color: white;
+  padding: 10px;
+}
+
+.arcanaTable {
+  width: 100%;
+  position: absolute;
+  background-color: white;
+}
+.filterView {
+  display: none;
+  height: auto;
+  width: 80%;
+  right: 0;
+  position: absolute;
+  background-color: white;
+  border-top: 1px solid #E1E1E1;
+  border-left: 1px solid #E1E1E1;
+  
+}
+
+@media (min-width: 550px) {
+  .filterView, .arcanaTable {
+    width: 50%;
+  }
+  .filterView {
+    left: 50%;
+  }
+}
+
+.filterCell, .filterCellSelected {
+  width: 20%;
+  height: 44px;
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
+
+.filterCell {
+  color: black;
+  background-color: white;
+}
+
+.filterCellSelected {
+  color: white;
+  background-color: #68a283;
+}
+
+.filterCell:hover {
+  background-color: #F7F7F7;
+  color: #68a283;
+}
+
+td.filterCell, td.filterCellSelected {
+  padding: 5px;
+}
+
+td.filterCell:first-child, td.filterCellSelected:last-child, td.clearFiltersCell:first-child {
+  border-left: none;
+}
+
+td.filterCell:last-child, td.filterCellSelected:last-child {
+  border-right: 1px solid #ddd;
+}
+
+tr.spacer {
+  height: 20px;
+  background-color: transparent;
+}
+
+.clearFiltersCell {
+  height: 40px;
+  line-height: 40px;
+  margin-top: 20px;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgray
+}
+
+.clearFiltersCell:hover {
+  background-color: #F7F7F7;
+}
+
+tr.newFilter {
+  border-top: 1px solid #ddd;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: white;
+    color: black;
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content div {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content div:hover {background-color: #f1f1f1}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+}

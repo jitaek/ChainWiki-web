@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+    {
+      "appID": "3NP653TDUD.com.jk.cckorea.debug",
+      "paths": ["*"]
+    },
+    {
+      "appID": "3NP653TDUD.com.jk.cckorea",
+      "paths": ["*"]
+    }
+    ]
+  }
+}

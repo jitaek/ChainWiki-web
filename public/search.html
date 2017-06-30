@@ -1,0 +1,104 @@
+<!doctype html>
+<!--
+  Searches for an arcana based on nameKR.
+-->
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>체인크로니클 위키</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css?v=20">
+
+<!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/jquery.lazyload.js"></script>
+  <script src="/js/search.js?v=1"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/logo.png">
+
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="/">아르카나</a>
+    <a href="/filter">필터</a>
+    <a href="/ability">어빌리티</a>
+    <a href="/about">앱 정보</a>
+  </div>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="margin-top: 20px; margin-left: 10px;">
+    <form type='submit'>
+      <input type="text" id='searchArcanaText' placeholder="아르카나 이름 검색"
+      onkeydown='if (event.keyCode == 13) 
+      searchArcana()' required>
+      <input type="button" value="검색" onclick='searchArcana()'>
+    </form>
+  </div>
+
+  <div class='loadingBox'>
+      <div class='loader'></div>
+      <div>아르카나 검색 중...</div>
+  </div>
+
+  <table class="u-full-width" id='arcanaTable' style='display: none'>
+    <thead>
+      <tr>
+        <th>아르카나</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="arcana">
+    </tbody>
+  </table>
+
+<!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBD9eX7ABB0Xu1N6CnSdKL-bnsNF5WgLtc",
+    authDomain: "chainchronicle-ea233.firebaseapp.com",
+    databaseURL: "https://chainchronicle-ea233.firebaseio.com",
+    projectId: "chainchronicle-ea233",
+    storageBucket: "chainchronicle-ea233.appspot.com",
+    messagingSenderId: "1008757887866"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73091430-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

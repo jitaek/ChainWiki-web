@@ -1,0 +1,161 @@
+<!doctype html>
+<!--
+  Arcana Page. View arcana's specific info. Takes in arcanaID as url parameter.
+-->
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>체인크로니클 위키</title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css?v=25">
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/jquery.lazyload.js"></script>
+  <script type="text/javascript" src="/js/arcana.js?v=5"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/logo.png">
+
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="/">아르카나</a>
+    <a href="/filter">필터</a>
+    <a href="/ability">어빌리티</a>
+    <a href="/about">앱 정보</a>
+  </div>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class ="placeholderMain">
+    <div class="u-full-width" id="arcanaImage"></div>
+</div>
+
+
+<!--Arcana Base Info-->
+<table class="arcanaDetailTable">
+    <tr>
+        <th class="headerCell">이름</th>
+        <td class="bodyCell" id="nameKR"></td>
+    </tr>
+    <tr>
+        <th class="headerCell">레어</th>
+        <td class="bodyCell" id="rarity"></td>
+    </tr>
+    <tr>
+        <th class="headerCell">직업</th>
+        <td class="bodyCell" id="group"></td>
+    </tr>
+    <tr>
+        <th class="headerCell">소속</th>
+        <td class="bodyCell" id="affiliation"></td>
+    </tr>
+    <tr>
+        <th class="headerCell">코스트</th>
+        <td class="bodyCell" id="cost"></td>
+    </tr>
+    <tr>
+        <th class="headerCell">무기</th>
+        <td class="bodyCell" id="weapon"></td>
+    </tr>
+    <tr>
+        <th class="headerCell">출현 장소</th>
+        <td class="bodyCell" id="tavern"></td>
+    </tr>
+</table>
+
+<!--Arcana Skill and Ability-->
+<table class='arcanaSkillTable'>
+    <tr>
+        <th class="headerCell">스킬 1</th>
+        <td class="bodyCell">
+            <div>
+                <div class="skillNameCell" id="skillName1"></div>
+                <div class='manaContainer'>
+                    <div class="manaLabelCell">마나</div>
+                    <div class="manaCell" id="skillMana1"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<div class="skillAbilityDescCell" id="skillDesc1"></div>
+
+<!--<table class='arcanaSkillTable'>
+    <tr>
+        <th class="headerCell">어빌 1</th>
+        <td class="bodyCell" id="abilityName1"></td>
+    </tr>
+</table>
+<div class="skillAbilityDescCell" id="abilityDesc1"></div>-->
+
+<table class='arcanaSkillTable'>
+    <tr>
+        <th class="headerCell">인연</th>
+        <td class="bodyCell">
+            <div>
+                <div class="skillNameCell" id="kizunaName"></div>
+                <div class='manaContainer'>
+                    <div class="manaLabelCell">코스트</div>
+                    <div class="manaCell" id="kizunaCost"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<div class="skillAbilityDescCell" id="kizunaDesc"></div>
+
+<div class='skillAbilityDescCell'><a id='wikiJPLink' target="_blank">일첸 위키 가기</a></div>
+<div class='skillAbilityDescCell'><a id='arcanaEditLink'>아르카나 정보 수정</a></div>
+
+<!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBD9eX7ABB0Xu1N6CnSdKL-bnsNF5WgLtc",
+    authDomain: "chainchronicle-ea233.firebaseapp.com",
+    databaseURL: "https://chainchronicle-ea233.firebaseio.com",
+    projectId: "chainchronicle-ea233",
+    storageBucket: "chainchronicle-ea233.appspot.com",
+    messagingSenderId: "1008757887866"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73091430-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script src="/js/arcana.js"></script>
+</body>
+</html>

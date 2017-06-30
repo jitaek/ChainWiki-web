@@ -1,0 +1,168 @@
+<!doctype html>
+<!--
+  Arcana Home Screen. Queries 10 arcana at a time as user scrolls down. Starts from the most recent posting.
+-->
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>체인크로니클 위키</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css?v=0">
+
+
+<!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/jquery.lazyload.js"></script>
+  <script src="/js/ability.js?v=3"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/logo.png">
+
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="/">아르카나</a>
+    <a href="/filter">필터</a>
+    <a href="/ability">어빌리티</a>
+    <a href="/about">앱 정보</a>
+  </div>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <div>
+
+    <div class="u-full-width" id='abilityType' style='margin-bottom: 0px;'>
+      <button class="abilityTypeButton" id='Ability'>어빌리티</button>
+      <button class="abilityTypeButton" id='Kizuna'>인연</button>
+    </div>
+
+    <ul class="u-full-width" id='abilityList' style='display: none; list-style-type: none; margin-left: 0; clear: both'>
+        <li id='mana' class='abilityListCell'>마나의 소양</li>
+        <li id='treasure' class='abilityListCell'>상자 획득</li>
+        <li id='gold' class='abilityListCell'>골드</li>
+        <li id='exp' class='abilityListCell'>경험치</li>
+        <li id='apRecover' class='abilityListCell'>AP 회복</li>
+        <li id='sub' class='abilityListCell'>서브시 증가</li>
+        <li id='skillUp' class='abilityListCell'>필살기 증가</li>
+        <li id='bossWave' class='abilityListCell'>보스 웨이브시 공격력 증가</li>
+        <li id='manaSlot' class='abilityListCell'>마나 슬롯 속도</li>
+        <li id='manaChance' class='abilityListCell'>마나 획득 확률 증가</li>
+        <li id='partyHeal' class='abilityListCell'>웨이브 회복</li>
+        <li id='darkAttackUp' class='abilityListCell'>어둠 적에게 공격력 증가</li>
+        <li id='darkImmune' class='abilityListCell'>어둠 면역</li>
+        <li id='darkStrike' class='abilityListCell'>어둠 부여</li>
+        <li id='slowAttackUp' class='abilityListCell'>슬로우 적에게 공격력 증가</li>
+        <li id='slowImmune' class='abilityListCell'>슬로우 면역</li>
+        <li id='slowStrike' class='abilityListCell'>슬로우 부여</li>
+        <li id='poisonAttackUp' class='abilityListCell'>독 적에게 공격력 증가</li>
+        <li id='poisonImmune' class='abilityListCell'>독 면역</li>
+        <li id='poisonStrike' class='abilityListCell'>독 부여</li>
+        <li id='curseAttackUp' class='abilityListCell'>저주 적에게 공격력 증가</li>
+        <li id='curseImmune' class='abilityListCell'>저주 면역</li>
+        <li id='curseStrike' class='abilityListCell'>저주 부여</li>
+        <li id='weakAttackUp' class='abilityListCell'>쇠약 적에게 공격력 증가</li>
+        <li id='weakImmune' class='abilityListCell'>쇠약 면역</li>
+        <li id='weakStrike' class='abilityListCell'>쇠약 부여드</li>
+        <li id='stunAttackUp' class='abilityListCell'>다운 적에게 공격력 증가</li>
+        <li id='stunImmune' class='abilityListCell'>다운 면역</li>
+        <li id='stunStrike' class='abilityListCell'>다운 부여</li>
+        <li id='frostAttackUp' class='abilityListCell'>동결 적에게 공격력 증가</li>
+        <li id='frostImmune' class='abilityListCell'>동결 면역</li>
+        <li id='frostStrike' class='abilityListCell'>동결 부여</li>
+        <li id='sealAttackUp' class='abilityListCell'>봉인 적에게 공격력 증가</li>
+        <li id='sealImmune' class='abilityListCell'>봉인 면역</li>
+        <li id='sealStrike' class='abilityListCell'>봉인 부여</li>
+        <li id='wastelands' class='abilityListCell'>황무지</li>
+        <li id='forest' class='abilityListCell'>숲</li>
+        <li id='cavern' class='abilityListCell'>덩굴</li>
+        <li id='desert' class='abilityListCell'>사막</li>
+        <li id='snow' class='abilityListCell'>설산</li>
+        <li id='urban' class='abilityListCell'>도시</li>
+        <li id='water' class='abilityListCell'>해변</li>
+        <li id='night' class='abilityListCell'>야간</li>
+
+    </ul>
+
+    <div class="tab clear" id="abilityTab" style='display: none; border-top: 1px solid white; border-bottom: 1px solid lightgray'>
+      <button class="tablinks arcanaClassButton" id = 'warriorTab' onclick="selectTab('warrior')">전사</button>
+      <button class="tablinks arcanaClassButton" onclick="selectTab('knight')">기사</button>
+      <button class="tablinks arcanaClassButton" onclick="selectTab('archer')">궁수</button>
+      <button class="tablinks arcanaClassButton" onclick="selectTab('magician')">법사</button>
+      <button class="tablinks arcanaClassButton" onclick="selectTab('healer')">승려</button>
+    </div>
+
+    <table class="u-full-width" id='warrior' style='display: none'>
+      <tbody>
+      </tbody>
+    </table>
+    <table class="u-full-width" id='knight' style='display: none'>
+      <tbody>
+      </tbody>
+    </table>
+    <table class="u-full-width" id='archer' style='display: none'>
+      <tbody>
+      </tbody>
+    </table>
+    <table class="u-full-width" id='magician' style='display: none'>
+      <tbody>
+      </tbody>
+    </table>
+    <table class="u-full-width" id='healer' style='display: none'>
+      <tbody>
+      </tbody>
+    </table>
+    
+
+  </div>
+
+<!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBD9eX7ABB0Xu1N6CnSdKL-bnsNF5WgLtc",
+    authDomain: "chainchronicle-ea233.firebaseapp.com",
+    databaseURL: "https://chainchronicle-ea233.firebaseio.com",
+    projectId: "chainchronicle-ea233",
+    storageBucket: "chainchronicle-ea233.appspot.com",
+    messagingSenderId: "1008757887866"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73091430-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
