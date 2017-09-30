@@ -149,8 +149,8 @@ function insertFestivalCell(data) {
   arcanaImageCell.style.height = '66px';
 
   firebase.storage().ref().child(`/image/arcana/${arcanaID}/icon.jpg`).getDownloadURL().then(function(url) {
-    arcanaImageCell.innerHTML = `<img data-original='${url}' class='arcanaImageIcon' id='${arcanaID}_icon'/>`;
-    $('#' + `${arcanaID}_icon`).lazyload({
+    arcanaImageCell.innerHTML = `<img data-original='${url}' class='arcanaImageIcon' id='${arcanaID}_icon_festival'/>`;
+    $('#' + `${arcanaID}_icon_festival`).lazyload({
       placeholder: 'images/logo.png',
       effect : 'fadeIn'
     });
